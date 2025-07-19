@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>精英之英招新官网</title>
+  <style>
+    
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0; padding: 0;
+      height: 100%; width: 100%;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+   
+    .top-nav {
+      display: flex;
+      align-items: center; 
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: #000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      height: 80px;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      border-right: 1px solid #fff;
+      padding-right: 1.8rem;
+      margin-right: 1.8rem;
+    }
+    .nav-logo {
+      width: 100px;
+      height: auto;
+      vertical-align: middle;
+    }
+    .nav-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+    }
+    .nav-link:hover {
+      color: #0ff;
+    }
+
+    
+    .bottom-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: #000;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      height: 60px;
+    }
+    .bottom-left {
+      font-size: 1rem;
+      
+    }
+    .bottom-right {
+      font-size: 1rem;
+      
+      font-weight: bold;
+    }
+
+   
+    body { 
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    
+    @media (max-width: 768px) {
+      .top-nav {
+        padding: 1rem;
+        height: 70px;
+      }
+      .nav-logo {
+        width: 50px; 
+      }
+      .nav-title {
+        font-size: 1.1rem; 
+      }
+      .nav-right {
+        gap: 1.2rem;
+      }
+      .nav-link {
+        font-size: 0.9rem;
+      }
+      body {
+        padding-top: 70px;
+      }
+      
+      .bottom-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        height: auto;
+      }
+      .bottom-left, .bottom-right {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-logo {
+        width: 45px;
+
+      }
+      .nav-title {
+        font-size: 1.0rem; 
+        letter-spacing: 0;
+      }
+      .nav-right {
+        gap: 0.8rem;
+      }
+      .nav-link {
+        font-size: 0.8rem;
+      }
+    }
+
+    
+    header {
+      position: relative;
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+      z-index: 2;
+    }
+    .main-title {
+      font-size: 4rem;
+      font-weight: 500;
+      margin: 0;
+      color: rgb(105, 202, 221);
+      text-shadow: 0 0 80px rgb(139, 52, 239);
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: #ccc;
+      opacity: 0.8;
+      margin-top: 1rem;
+    }
+
+    
+    .buttons {
+      display: flex;
+      gap: 0.6rem; 
+      justify-content: space-between; 
+      flex-wrap: wrap;
+  
+      margin-top: 2rem;
+      max-width: 900px; 
+      margin: 2rem auto 0;
+    }
+    .btn {
+      background: rgba(0, 255, 255, 0.3);
+      color: #fff;
+      padding: 1.2rem 2.4rem; 
+      margin: 0; 
+      border: 2px solid rgb(89, 93, 179); 
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem; 
+      transition: background 0.3s, transform 0.3s;
+    }
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 1rem;
+      box-shadow: 0 0 20px #0ff;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid #0ff;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    section p {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+
+    .photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .photo-grid img {
+      max-width: 45%;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(255,255,255,0.5);
+      transition: transform 0.3s;
+    }
+    .photo-grid img:hover {
+      transform: scale(1.03);
+    }
+
+ 
+    canvas#particles {
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+    }
+    .click-effect {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, transparent 70%);
+      box-shadow: 0 0 15px rgba(255,0,0,0.9);
+      animation: boom 0.6s ease-out forwards;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    @keyframes boom {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(4); opacity: 0; }
+    }
+
+
+    @media (max-width: 400px) {
+      .main-title { font-size: 2rem; }
+      .photo-grid img { max-width: 100%; }
+      section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+
+<div class="top-nav">
+  <div class="nav-left">
+    <img src="picture/logo.png" alt="精英之英Logo" class="nav-logo" />
+    <span class="nav-title">精英之英学科竞赛与创新创业团队</span>
+  </div>
+  <div class="nav-right">
+    <a href="#" class="nav-link">首页</a>
+    <a href="picture/wechat.jpg" target="_blank" class="nav-link">公众号</a>
+    <a href="picture/qq.jpg" target="_blank" class="nav-link">QQ群</a>
+  </div>
+</div>
+
+
+<header>
+  <h1 class="main-title">精英之英学科竞赛与创新创业团队</h1>
+  <p class="subtitle"></p>
+  <div class="buttons">
+    <button class="btn" onclick="document.getElementById('intro').scrollIntoView({ behavior: 'smooth' })">了解我们</button>
+    <button class="btn" onclick="document.getElementById('exam').scrollIntoView({ behavior: 'smooth' })">招新考试</button>
+    <button class="btn" onclick="document.getElementById('honors').scrollIntoView({ behavior: 'smooth' })">往届荣誉</button>
+    <button class="btn" onclick="document.getElementById('activities').scrollIntoView({ behavior: 'smooth' })">活动风采</button>
+  </div>
+</header>
+
+
+<section id="intro">
+  <h2>关于我们</h2>
+  <p>精英之英全名是精英之英学科竞赛与创新创业团队，是山西大学自动化与软件学院的院队，自2016年建队以来 走出许多就业明星（阿里 腾讯等大厂） 保研大佬 拿下许多竞赛的大奖甚至是国家级一，二等奖，实力强劲 队内学风优良，有实验室，学长学姐会带着大一队员学习 在迎新群里 大家有什么不懂的 热心的学长学姐会为大家解答哦~。</p>
+  <p>团队有专属实验室，实行“以老带新”，迎新群专人答疑，助力成长！</p>
+</section>
+
+
+<section id="exam">
+  <h2>招新计划</h2>
+  <p>2025年招新考试拟于<strong>10月底-11月初</strong>启动：</p>
+  <ul>
+    <li> 报名表截止：xx月xx日 xx:00（邮箱提交，命名：班级+姓名+报名表）</li>
+    <li> 考试范围：主体设计重点为，c语言基础知识，c语言编程，重点为字符串，指针。过去几年的题在群文件，难度适中，欢迎大家前来参加挑战。</li>
+  </ul>
+</section>
+
+
+<section id="honors">
+  <h2>队内往届荣誉</h2>
+  <ul>
+    <li>队员蓝桥杯多次获得国家级奖项，近三年 国家级奖项达十多个。省级奖项若干</li>
+    <li> 华为ict也取得国三成绩</li>
+    <li> 华北五省，团体程序设计天梯赛也都取得国家级以上的成绩</li>
+    <li>有多名学长学姐保研成功，成绩优异。并有多人获得山西大学三好学生，奖学金等</li>
+  </ul>
+  <div class="photo-grid">
+    <img src="picture/honor1.jpg" alt="荣誉1" />
+    <img src="picture/honor2.jpg" alt="荣誉2" />
+     <img src="picture/honor3.jpg" alt="荣誉3" />
+    <img src="picture/honor4.jpg" alt="荣誉4" />
+     <img src="picture/honor5.jpg" alt="荣誉5" />
+     <img src="picture/honor6.jpg" alt="荣誉6" />
+     <img src="picture/honor7.jpg" alt="荣誉7" />
+<img src="picture/honor8.jpg" alt="荣誉8" />
+  </div>
+<p>(以上为去年部分获奖证书)</p>
+</section>
+
+
+<section id="activities">
+  <h2>活动风采</h2>
+  <div class="photo-grid">
+    <img src="picture/activity1.jpg" alt="" />
+    <img src="picture/activity2.jpg" alt="" />
+    <img src="picture/activity3.jpg" alt="" />
+     <img src="picture/activity4.jpg" alt="" />
+  </div>
+</section>
+
+
+<div class="bottom-nav">
+  <div class="bottom-left">欢迎加入精英之英</div>
+  <div class="bottom-right">精英之英，何止精英！</div>
+</div>
+
+
+<script>
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let particles = [];
+
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 0.4,
+    vy: (Math.random() - 0.5) * 0.4,
+    size: Math.random() * 1.5 + 0.5
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = "#0ff";
+    ctx.fill();
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+
+document.addEventListener('click', function(e) {
+  let particle = document.createElement('div');
+  particle.className = 'click-effect';
+  particle.style.left = e.pageX + 'px';
+  particle.style.top = e.pageY + 'px';
+  document.body.appendChild(particle);
+  setTimeout(() => particle.remove(), 500);
+});
+</script>
+</body>
+</html>
